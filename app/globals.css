@@ -1,0 +1,87 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #272630;
+  background: #f7f6f2;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app {
+  width: 100%;
+  max-width: 800px;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.reading {
+  width: 100%;
+  padding: 36px;
+  background: #fff;
+  border: 1px solid #e8e5ec;
+  border-radius: 20px;
+  box-shadow: 0 5px 8px -7px #34284826, 0 22px 65px -45px #34284838;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  text-wrap: pretty;
+}
+
+#description {
+  margin: 0;
+  color: #787380;
+  font-size: 20px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+button {
+  flex-shrink: 0;
+  min-width: 160px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 12px;
+  background: #6950dc;
+  color: #fff;
+  box-shadow: 0 5px 12px #6950dc20;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover:not(:disabled) { background: #5b40cf; }
+button:active:not(:disabled) { background: #5035c0; }
+button:focus-visible { outline: 3px solid #bfb0ef; outline-offset: 4px; }
+button:disabled { opacity: 0.45; cursor: wait; }
+
+@media (max-width: 600px) {
+  .app { padding-inline: 20px; }
+  .reading { padding: 24px; border-radius: 18px; text-align: center; }
+  h1 { font-size: 32px; letter-spacing: -0.8px; margin-bottom: 18px; }
+  #description { font-size: 18px; line-height: 1.55; }
+}
+
+@media (max-height: 600px) {
+  .app { padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); gap: 14px; }
+  .reading { padding: 20px; }
+  h1 { font-size: 28px; margin-bottom: 16px; }
+  #description { font-size: 17px; line-height: 1.5; }
+  button { min-height: 48px; padding-block: 12px; }
+}
